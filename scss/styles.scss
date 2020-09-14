@@ -40,18 +40,26 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f2f3fb;
-  width: 250px;
-  height: 300px;
+  background-color: #3B3F43; 
+  color: #fff;
+  width: 350px;
+  height: 400px;
   text-align: center;
   .img-container {
     position: relative;
   }
-  .card--img {
-    object-fit: contain;
-    width: 200px;
-    height: 150px;
-    margin-bottom: 1em;
+
+  .img-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items: center;
+  }
+  .card--img {  
+    margin-top: 15px; 
+    object-fit: cover;
+    width: 150px;
+    margin-bottom: 15px;
   }
   .character-title {
     margin-bottom: 1em;
@@ -78,4 +86,8 @@ header {
 
 .alive { 
   color: green;
+}
+
+.dead {
+  color: red;
 }

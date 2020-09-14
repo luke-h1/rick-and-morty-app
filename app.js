@@ -8,6 +8,18 @@ async function getData() {
   showDataDOM(data);
 }
 
+// function detectStatus() {
+//   const listEl = document.querySelector('.collection-item');
+//   const alive = document.querySelector('.alive');
+//   if (alive.textContent.includes('dead')) {
+//     alive.className = 'dead';
+//   } else if (listEl.textContent.includes('alive')) {
+//     alive.className = 'alive';
+//   } else {
+//     return;
+//   }
+// }
+
 function showDataDOM(data) {
   console.log(data);
   let output = '';
@@ -19,14 +31,13 @@ function showDataDOM(data) {
       </div>
       <h2 class="character-title">${character.name}</h2>
       <ul class="list">
-  <li class="collection-item">
-  ${
-    character.status
-      ? `<span class='alive'>Status: ${character.status}</span>`
-      : ''
-  }
-  </li> 
-
+    <li class="collection-item">
+        ${
+          character.status === 'Alive'
+            ? `<span class="alive">Status: ${character.status}</span>`
+            : `<span class="dead">Status: ${character.status}</span>`
+        }
+        </li> 
       <li class="collection-item">Planet: ${character.origin.name}</li>
       <li class="collection-item">Gender: ${character.gender}</li>
     </ul>
@@ -34,6 +45,7 @@ function showDataDOM(data) {
     `;
   });
   div.innerHTML = output;
+  // detectStatus();
 }
 
 // EVENT LISTENERS

@@ -1,0 +1,1 @@
+Hello, I am currently working with the Rick and Morty API. I want to use something like a turnary operator to detect if the character is dead or alive & change the color of the list item based on that.  Is there any way of doing this based on what the API response is or would I have to do this via DOM manipulation ? 
