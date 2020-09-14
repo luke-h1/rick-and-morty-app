@@ -35,4 +35,4 @@ function showDataDOM(data) {
   div.innerHTML = output;
 }
 // EVENT LISTENERS
-document.addEventListener('DOMContentLoaded', getData);
+btn.addEventListener('DOMContentLoaded', getData);
