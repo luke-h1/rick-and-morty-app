@@ -8,11 +8,21 @@ function showLoader() {
   loaading.classList.add('show');
   setTimeout(() => {
     page++;
+    clearDOM();
     getData()
+    scrollUp();
   }, 300);
   setTimeout(() => {
     loaading.classList.remove('show');
   }, 1000);
+}
+
+function scrollUp(){
+  window.scrollTo(0,0)
+}
+
+function clearDOM(){
+  div.innerHTML = '';
 }
 
 function filterCharacters(e) {
