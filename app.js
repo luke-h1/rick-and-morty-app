@@ -1,4 +1,4 @@
-const btn = document.getElementById('temp-btn');
+const btn = document.getElementById('btn');
 const div = document.getElementById('output');
 const filter = document.getElementById('filter-characters');
 const loaading = document.querySelector('.loader');
@@ -10,8 +10,10 @@ function showLoader() {
     page++;
     clearDOM();
     getData();
-    scrollUp();
   }, 300);
+  setTimeout(() => {
+    scrollUp();
+  }, 1500);
   setTimeout(() => {
     loaading.classList.remove('show');
   }, 1000);
@@ -83,6 +85,6 @@ function infiniteScrollFetch() {
 }
 
 // EVENT LISTENERS
-document.addEventListener('DOMContentLoaded', getData);
+btn.addEventListener('click', getData);
 filter.addEventListener('keyup', filterCharacters);
 window.addEventListener('scroll', infiniteScrollFetch);

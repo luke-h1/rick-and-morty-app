@@ -63,7 +63,7 @@ header a {
 }
 
 .filter {
-  margin-top: 1.5em;
+  margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
@@ -138,6 +138,27 @@ header a {
 .wrapper i:hover {
   color: #efcefa;
 }
+.wrapper h1 {
+  border-bottom: 1px solid #000;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin: 15px 0 15px 0;
+  padding: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10px;
+  outline: 0;
+  width: 25%;
+}
 
 .loader {
   opacity: 0;
@@ -153,12 +174,12 @@ header a {
 }
 
 .circle {
-  background-color: #fff;
+  background-color: #000;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin: 5px;
-  animation: bounce 0.5s ease-in infinite;
+  animation: bounce 0.8s ease-in infinite;
 }
 
 .circle:nth-child(2) {
