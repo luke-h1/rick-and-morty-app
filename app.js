@@ -19,14 +19,17 @@ function showLoader() {
   }, 1000);
 }
 
+// SCROLL TO TOP OF PAGE AFTER INFINITE SCROLL FUNC IS CALLED
 function scrollUp() {
   window.scrollTo(0, 0);
 }
 
+// CLEAR CHARACTER DIV
 function clearDOM() {
   div.innerHTML = '';
 }
 
+// FILTER CHARACTERS
 function filterCharacters(e) {
   console.log(`VAL: ${e.target.value}`);
   const filterVal = document
@@ -43,6 +46,7 @@ function filterCharacters(e) {
   }
 }
 
+// FETCH DATA FROM API
 async function getData() {
   const BASE_URL = `https://rickandmortyapi.com/api/character?page=${page}`;
   const res = await fetch(`${BASE_URL}`);
@@ -50,6 +54,7 @@ async function getData() {
   showDataDOM(data);
 }
 
+// SHOW DATA IN DOM
 function showDataDOM(data) {
   console.log(data);
   let output = '';
@@ -76,6 +81,9 @@ function showDataDOM(data) {
   });
   div.innerHTML = output;
 }
+
+// CALCULATE SCROLL HEIGHT FOR INFI SCROLL AND THEN CALL THE SHOWLOADER FUNC
+// TO FETCH MORE PAGES
 
 function infiniteScrollFetch() {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
