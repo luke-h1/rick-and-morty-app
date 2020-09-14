@@ -2,10 +2,25 @@ const BASE_URL = `https://rickandmortyapi.com/api/character`;
 const btn = document.getElementById('temp-btn');
 const div = document.getElementById('output');
 const filter = document.getElementById('filter-characters');
+const loaading = document.querySelector('.loader');
+
+let page = 1;
+
+function showLoader() {
+  loaading.classList.add('show');
+  setTimeout(() => {
+    page++;
+  }, 300);
+  setTimeout(() => {
+    loaading.classList.remove('show');
+  }, 1000);
+}
 
 function filterCharacters(e) {
   console.log(`VAL: ${e.target.value}`);
-  const filterVal = document.getElementById('filter-characters').value.toUpperCase();
+  const filterVal = document
+    .getElementById('filter-characters')
+    .value.toUpperCase();
   const card = document.querySelectorAll('.card');
   for (let i = 0; i < card.length; i++) {
     let h2 = card[i].getElementsByTagName('h2')[0];
@@ -50,5 +65,12 @@ function showDataDOM(data) {
   div.innerHTML = output;
 }
 // EVENT LISTENERS
-document.addEventListener('DOMContentLoaded', getData);
+// document.addEventListener('DOMContentLoaded', getData);
+btn.addEventListener('click', getData);
 filter.addEventListener('keyup', filterCharacters);
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    showLoader();
+  }
+});
