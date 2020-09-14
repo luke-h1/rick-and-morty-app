@@ -1,6 +1,9 @@
 const BASE_URL = `https://rickandmortyapi.com/api/character`;
 const btn = document.getElementById('temp-btn');
 const div = document.getElementById('output');
+const filter = document.getElementById('filter-characters');
+
+
 
 async function getData() {
   const res = await fetch(`${BASE_URL}`);
@@ -35,4 +38,5 @@ function showDataDOM(data) {
   div.innerHTML = output;
 }
 // EVENT LISTENERS
-btn.addEventListener('DOMContentLoaded', getData);
+btn.addEventListener('click', getData);
+filter.addEventListener('keyup', filterCharacters);
