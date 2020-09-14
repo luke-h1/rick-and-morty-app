@@ -9,7 +9,7 @@ function showLoader() {
   setTimeout(() => {
     page++;
     clearDOM();
-    getData()
+    getData();
     scrollUp();
   }, 300);
   setTimeout(() => {
@@ -17,11 +17,11 @@ function showLoader() {
   }, 1000);
 }
 
-function scrollUp(){
-  window.scrollTo(0,0)
+function scrollUp() {
+  window.scrollTo(0, 0);
 }
 
-function clearDOM(){
+function clearDOM() {
   div.innerHTML = '';
 }
 
@@ -74,12 +74,15 @@ function showDataDOM(data) {
   });
   div.innerHTML = output;
 }
-// EVENT LISTENERS
-document.addEventListener('DOMContentLoaded', getData);
-filter.addEventListener('keyup', filterCharacters);
-window.addEventListener('scroll', () => {
+
+function infiniteScrollFetch() {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight - 5) {
     showLoader();
   }
-});
+}
+
+// EVENT LISTENERS
+document.addEventListener('DOMContentLoaded', getData);
+filter.addEventListener('keyup', filterCharacters);
+window.addEventListener('scroll', infiniteScrollFetch);
