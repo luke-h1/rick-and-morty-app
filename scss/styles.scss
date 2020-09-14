@@ -145,10 +145,10 @@ header {
 .loader {
   opacity: 0;
   display: flex;
-  position: fixed;
-  bottom: 50px;
+  position: fixed; 
+  bottom: 20px;
   transition: opacity 0.5s ease-in;
-  margin-left: 35em;
+  margin-left: 20em;
 }
 
 .loader.show {
