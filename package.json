@@ -1,0 +1,24 @@
+{
+  "name": "rick-and-morty-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/styles.scss css/styles.css",
+    "dev": "lite-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luke-h1/rick-and-morty-app.git"
+  },
+  "author": "luke-h1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luke-h1/rick-and-morty-app/issues"
+  },
+  "homepage": "https://github.com/luke-h1/rick-and-morty-app#readme",
+  "dependencies": {
+    "sass": "^1.26.10"
+  }
+}

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+header {
+  background-color: #000;
+  padding: 10px;
+  color: #eaeaea;
+}
+header i {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header i:hover {
+  color: #a4bab7;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f3fb;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+}
+.card .img-container {
+  position: relative;
+}
+.card .card--img {
+  object-fit: contain;
+  width: 200px;
+  height: 150px;
+  margin-bottom: 1em;
+}
+.card .character-title {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #393e53;
+  font-weight: 700;
+}
+.card .list {
+  list-style-type: none;
+}
+.card .collection-item {
+  line-height: 1.6;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.alive {
+  color: green;
+}
+
+/*# sourceMappingURL=styles.css.map */
