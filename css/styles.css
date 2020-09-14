@@ -64,6 +64,7 @@ header a {
 
 .filter {
   margin-top: 1.5em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -3,7 +3,19 @@ const btn = document.getElementById('temp-btn');
 const div = document.getElementById('output');
 const filter = document.getElementById('filter-characters');
 
-
+function filterCharacters(e) {
+  console.log(`VAL: ${e.target.value}`);
+  const filterVal = document.getElementById('filter-characters').value.toUpperCase();
+  const card = document.querySelectorAll('.card');
+  for (let i = 0; i < card.length; i++) {
+    let h2 = card[i].getElementsByTagName('h2')[0];
+    if (h2.innerHTML.toUpperCase().indexOf(filterVal) > -1) {
+      card[i].style.display = '';
+    } else {
+      card[i].style.display = 'none';
+    }
+  }
+}
 
 async function getData() {
   const res = await fetch(`${BASE_URL}`);
@@ -38,5 +50,5 @@ function showDataDOM(data) {
   div.innerHTML = output;
 }
 // EVENT LISTENERS
-btn.addEventListener('click', getData);
+document.addEventListener('DOMContentLoaded', getData);
 filter.addEventListener('keyup', filterCharacters);
