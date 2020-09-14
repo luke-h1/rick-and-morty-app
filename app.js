@@ -8,18 +8,6 @@ async function getData() {
   showDataDOM(data);
 }
 
-// function detectStatus() {
-//   const listEl = document.querySelector('.collection-item');
-//   const alive = document.querySelector('.alive');
-//   if (alive.textContent.includes('dead')) {
-//     alive.className = 'dead';
-//   } else if (listEl.textContent.includes('alive')) {
-//     alive.className = 'alive';
-//   } else {
-//     return;
-//   }
-// }
-
 function showDataDOM(data) {
   console.log(data);
   let output = '';
@@ -45,8 +33,6 @@ function showDataDOM(data) {
     `;
   });
   div.innerHTML = output;
-  // detectStatus();
 }
-
 // EVENT LISTENERS
-btn.addEventListener('click', getData);
+document.addEventListener('DOMContentLoaded', getData);

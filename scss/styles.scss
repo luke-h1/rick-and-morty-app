@@ -8,6 +8,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  @import "mobile"; // media queries
 }
 
 .title {
@@ -27,43 +28,45 @@ header {
       cursor: pointer;
     }
   }
+  h5 {
+    text-align: right;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  a {
+    outline: 0;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #3B3F43; 
+  background-color: #3b3f43;
   color: #fff;
-  width: 350px;
+  width: 300px;
   height: 400px;
   text-align: center;
   .img-container {
     position: relative;
   }
 
-  .img-container { 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;;
-    align-items: center;
+  .img-container {
   }
-  .card--img {  
-    margin-top: 15px; 
+  .card--img {
+    margin-top: 15px;
     object-fit: cover;
     width: 150px;
     margin-bottom: 15px;
   }
   .character-title {
     margin-bottom: 1em;
-    border-bottom: 1px solid #393e53;
+    border-bottom: 1px solid #fff;
     font-weight: 700;
   }
   .list {
@@ -74,20 +77,31 @@ header {
   }
 }
 
-.btn { 
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
-
-.alive { 
+.alive {
   color: green;
 }
 
 .dead {
   color: red;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  p {
+    font-size: 25px;
+    color: #000;
+  }
+  a {
+    cursor: pointer;
+  }
+  i {
+    color: #000;
+    &:hover {
+      color: #efcefa;
+    }
+  }
 }
