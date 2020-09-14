@@ -1,15 +1,14 @@
-const BASE_URL = `https://rickandmortyapi.com/api/character`;
 const btn = document.getElementById('temp-btn');
 const div = document.getElementById('output');
 const filter = document.getElementById('filter-characters');
 const loaading = document.querySelector('.loader');
-
 let page = 1;
 
 function showLoader() {
   loaading.classList.add('show');
   setTimeout(() => {
     page++;
+    getData()
   }, 300);
   setTimeout(() => {
     loaading.classList.remove('show');
@@ -33,6 +32,7 @@ function filterCharacters(e) {
 }
 
 async function getData() {
+  const BASE_URL = `https://rickandmortyapi.com/api/character?page=${page}`;
   const res = await fetch(`${BASE_URL}`);
   const data = await res.json();
   showDataDOM(data);
@@ -65,8 +65,7 @@ function showDataDOM(data) {
   div.innerHTML = output;
 }
 // EVENT LISTENERS
-// document.addEventListener('DOMContentLoaded', getData);
-btn.addEventListener('click', getData);
+document.addEventListener('DOMContentLoaded', getData);
 filter.addEventListener('keyup', filterCharacters);
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
